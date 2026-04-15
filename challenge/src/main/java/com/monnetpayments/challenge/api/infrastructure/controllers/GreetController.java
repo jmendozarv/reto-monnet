@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "")
+@RequestMapping
 public class GreetController {
 
     @Autowired
     private Service service;
 
-    @GetMapping(path = "greet")
+    @GetMapping(path = "/greet")
     public ResponseEntity<String> doAGreet() {
         return ResponseEntity.ok(service.doAGreet());
     }

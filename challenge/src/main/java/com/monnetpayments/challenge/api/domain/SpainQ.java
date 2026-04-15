@@ -4,7 +4,7 @@ public class SpainQ implements Q {
 
     @Override
     public String greet() {
-        return "hola!!!!!! " + this.greet();
+        return "hola!!!!!! " ;
     }
 
 }

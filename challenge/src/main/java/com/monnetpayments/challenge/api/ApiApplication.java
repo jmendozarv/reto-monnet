@@ -4,10 +4,10 @@ package com.monnetpayments.challenge.api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = "com.monnetpayments.challenge.console.*")
+@SpringBootApplication(scanBasePackages = "com.monnetpayments.challenge.api.*")
 public class ApiApplication {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(ApiApplication.class, args);
     }
 }
