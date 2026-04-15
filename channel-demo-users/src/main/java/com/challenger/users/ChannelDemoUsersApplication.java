@@ -1,4 +1,4 @@
-package com.challenger.channel_demo_users;
+package com.challenger.users;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

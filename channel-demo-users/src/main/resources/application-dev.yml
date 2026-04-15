@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: channel-demo-users
+
+  datasource:
+    url: jdbc:h2:mem:usersdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: Demo Users API
+    version: 1.0.0
+    description: API de usuarios consumiendo JSONPlaceholder
+
+app:
+  jwt:
+    secret: 12345678901234567890123456789012
