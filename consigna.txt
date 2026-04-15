@@ -1,0 +1,23 @@
+Challenge:
+1. Junto a este documento se encuentra una carpeta con un proyecto y dos aplicaciones. Este proyecto contiene errores intencionales.
+  Aplicación Api (dentro del paquete com.monnetpayments.challenge.api):
+    a. Corregirlo para que compile y levante correctamente. Se debe poder consultar el endpoint http://localhost:8099/challenge/greet/ (respetar puerto) y el resultado debe ser una cadena diciendo "hola!!!!"
+    b. Dado el código definido en el proyecto: ¿Qué harías para que el resultado sea en inglés? ¿Y en mayúscula?
+    c. Describe los componentes importantes.
+  Aplicación Consola (dentro del paquete com.monnetpayments.challenge.console):
+    d. Describe el algoritmo principal. ¿Qué podes decir de los dos métodos presentes?
+2. El proyecto del punto 1 contiene algunos patrones de diseño. Descubrir dos de ellos: 
+  a. Describirlos. Explicar para que sirven y beneficios de su uso.
+3. Crea un nuevo proyecto. Basado en Java y Sping Boot. Puedes basarte en el proyecto del punto 1.
+  a. Consumir la API pública https://jsonplaceholder.typicode.com/users y guardar los datos en la base H2.
+  b. Sobe el proyecto anterior. Exponer los datos en un endpoint REST (`GET /users`).
+  c. Proteger el endpoint con autenticación (API Token o JWT).
+  d. Agregar Spring Boot Actuator para exponer `/actuator/health` y `/actuator/info`.
+  e. Escribir al menos 2 test unitarios.
+
+  Bonus:
+  - Dockerfile funcional.
+  - Swagger/OpenAPI.
+  - Uso de MapStruct.
+  - Uso de Lombok.
+  - Uso de Maven.
