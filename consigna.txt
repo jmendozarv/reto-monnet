@@ -1,23 +1,35 @@
 Challenge:
-1. Junto a este documento se encuentra una carpeta con un proyecto y dos aplicaciones. Este proyecto contiene errores intencionales.
-  Aplicación Api (dentro del paquete com.monnetpayments.challenge.api):
-    a. Corregirlo para que compile y levante correctamente. Se debe poder consultar el endpoint http://localhost:8099/challenge/greet/ (respetar puerto) y el resultado debe ser una cadena diciendo "hola!!!!"
-    b. Dado el código definido en el proyecto: ¿Qué harías para que el resultado sea en inglés? ¿Y en mayúscula?
-    c. Describe los componentes importantes.
-  Aplicación Consola (dentro del paquete com.monnetpayments.challenge.console):
-    d. Describe el algoritmo principal. ¿Qué podes decir de los dos métodos presentes?
+1. Junto a este documento se encuentra una carpeta con un proyecto y dos aplicaciones. Este proyecto contiene errores intencionales.Aplicación Api (dentro del paquete com.monnetpayments.challenge.api):
+a. Corregirlo para que compile y levante correctamente. Se debe poder consultar el endpoint http://localhost:8099/challenge/greet/ (respetar puerto) y el resultado debe ser una cadena diciendo "hola!!!!" (Realizado)
+b. Dado el código definido en el proyecto: ¿Qué harías para que el resultado sea en inglés? ¿Y en mayúscula?
+Respuesta :  Existe una anotación de Spring el cual se permite cambiar el bean @Primary
+
+
+c. Describe los componentes importantes. Aplicación Consola (dentro del paquete com.monnetpayments.challenge.console):
+Respuesta : En la aplicación de consola, lo principal es la clase ConsoleApplication, ya que contiene el main y toda la lógica. Es simple porque todo está en un solo lugar, aunque mezcla varias responsabilidades (generar datos, calcular y mostrar resultados). También son clave los métodos calculateWithAlgorithm1 y calculateWithAlgorithm2, que resuelven el mismo problema de dos formas distintas. La app actúa como un validador: prueba ambos con muchos casos y verifica que den el mismo resultado.
+
+d. Describe el algoritmo principal. ¿Qué podes decir de los dos métodos presentes?
+Respuesta : 
+El algoritmo busca algo simple: dado un número n y un dígito d, construir otro número eliminando todas las apariciones de d. El main no lo resuelve directamente, sino que prueba ambos métodos con muchos valores aleatorios y compara resultados para validar que funcionen bien. 
+El método calculateWithAlgorithm1 es recursivo y más claro: va quitando dígitos y reconstruyendo el número sin los que coinciden con d. En cambio, calculateWithAlgorithm2 hace lo mismo de forma iterativa, pero es más complejo de leer porque usa potencias de 10 y lleva más control manual de las posiciones.
+
 2. El proyecto del punto 1 contiene algunos patrones de diseño. Descubrir dos de ellos: 
-  a. Describirlos. Explicar para que sirven y beneficios de su uso.
+a. Describirlos. Explicar para que sirven y beneficios de su uso.
+Respuesta : 
+Si , en el proyecto se puede reconocer al menos dos patrones de diseño : 
+El primero es Strategy. Se ve en la interfaz Q y sus implementaciones como SpainQ y EnglishQ. Permite tener distintas formas de hacer lo mismo (en este caso, saludar) y elegir cuál usar sin cambiar el resto del código. Esto hace el sistema más flexible y fácil de extender.
+El segundo es Decorator. Se ve en UppercaseQ, que envuelve otro Q y le agrega comportamiento (pasar a mayúsculas). Sirve para sumar funcionalidades sin modificar las clases originales y evitar crear muchas combinaciones de clases. 
+
 3. Crea un nuevo proyecto. Basado en Java y Sping Boot. Puedes basarte en el proyecto del punto 1.
-  a. Consumir la API pública https://jsonplaceholder.typicode.com/users y guardar los datos en la base H2.
-  b. Sobe el proyecto anterior. Exponer los datos en un endpoint REST (`GET /users`).
-  c. Proteger el endpoint con autenticación (API Token o JWT).
-  d. Agregar Spring Boot Actuator para exponer `/actuator/health` y `/actuator/info`.
-  e. Escribir al menos 2 test unitarios.
+  a. Consumir la API pública https://jsonplaceholder.typicode.com/users y guardar los datos en la base H2.(Realizado)
+  b. Sobe el proyecto anterior. Exponer los datos en un endpoint REST (`GET /users`).(Realizado)
+  c. Proteger el endpoint con autenticación (API Token o JWT). (Realizado)
+  d. Agregar Spring Boot Actuator para exponer `/actuator/health` y `/actuator/info`. (Realizado)
+  e. Escribir al menos 2 test unitarios. (Realizado)
 
   Bonus:
-  - Dockerfile funcional.
-  - Swagger/OpenAPI.
-  - Uso de MapStruct.
-  - Uso de Lombok.
-  - Uso de Maven.
+  - Dockerfile funcional. (Realizado)
+  - Swagger/OpenAPI. (Realizado)
+  - Uso de MapStruct. (Realizado)
+  - Uso de Lombok. (Realizado)
+  - Uso de Maven.(Realizado)
